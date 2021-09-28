@@ -1,8 +1,56 @@
 $(document).ready(function() {
+
+    // efecto de mouse arriba a cursos
+    $(".hoverDiv").hover(function(){
+        $(this).css("background", "#f5f5f5");
+    }, function(){
+        $(this).css("background", "#fff");
+    });
+
+    //para mostrar contenido de MT
+    $(".hoverDiv").click(function(){
+        $(".modificaciones").slideDown();
+        $(".hoverDiv").removeClass('border');
+        $(".hoverDiv").removeClass('border-primary');
+        $(this).addClass('border border-primary');
+    });
+
+    //oculta y muestra MT para demo
+    $("#carreras").change(function() {
+        var value = $("#carreras option:selected").val();
+        if (value == "ramos1") {
+        $(".hoverDiv").slideDown();
+        }else{
+            $(".hoverDiv").slideUp();
+        }
+    });
+
+    $("#select-ramos").change(function() {
+        var value = $("#select-ramos option:selected").val();
+        if (value == "true") {
+        $(".ramos1").slideUp();
+        }
+    });
+
+    $("#select-anio").change(function() {
+        var value = $("#select-anio option:selected").val();
+        if (value == "true") {
+        $(".ramos2").slideUp();
+        }else{
+            $(".hoverDiv").slideUp();
+        }
+    });
+
+
+
+
+
+    //formato de la tabla
+    
     $('#example').DataTable( {
         "columnDefs": [
             {
-                "targets": [ 1 ],
+                "targets": [ 0 ],
                 "visible": false,
                 "searchable": false
             }

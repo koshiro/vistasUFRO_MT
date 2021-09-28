@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Ajuste Curricular Transitorio</title>
+<!-- plugins:css -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/datatables.min.css">
+<link rel="stylesheet" href="assets/css/permisosUsuarios.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<!-- End Layout styles -->
+<link rel="shortcut icon" href="assets/images/favicon.gif" />
+
+</head>
+<body>
+    
+  <div class="row">
+    <nav class="navbar navbar-expand-lg navbar-dark" style=" background-color: #003072;">
+      <div class=" navbar-brand-wrapper ">
+          <a class="navbar-brand brand-logo" href="../index.html">
+          <img src="../assets/images/ufromenu.png" alt="logo" class="d-inline-block align-text-top" /> </a>         
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav navbar-nav-ufro ">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Programa</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mofificaciones Transitorias
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Ingresar</a></li>
+              <li><a class="dropdown-item" href="vistaMT.html">Visar</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Modificar</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  
+  <div class="row">
+    <div class="flex-shrink-0 col-lg-2" style=" background-color: #003072;" id="sidebar">
+      <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+          <a href="base.html" class="btn btn-toggle align-items-center rounded ">
+            Inicio
+          </a>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+            Vicerrectoria
+          </button>
+          <div class="collapse" id="dashboard-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="vistaMT.html" class="link-dark rounded">Modificaciones Transitorias</a></li>
+              <li><a href="#" class="link-dark rounded">Sistema 2</a></li>
+              <li><a href="#" class="link-dark rounded">Sistema 3</a></li>
+              <li><a href="#" class="link-dark rounded">sistema 4</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+            Otro Menu
+          </button>
+          <div class="collapse" id="orders-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-dark rounded">sub menu</a></li>
+              <li><a href="#" class="link-dark rounded">otra cosa</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+            Usuario
+          </button>
+          <div class="collapse" id="account-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-dark rounded">Perfil</a></li>
+              <li><a href="#" class="link-dark rounded">Contraseñas</a></li>
+              <li><a href="#" class="link-dark rounded">Opciones</a></li>
+              <li><a href="#" class="link-dark rounded">Salir de Intranet</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Contenedor Principal -->
+    <div class="col-lg-10 p-4">
+        
+      <div class="container-xl">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <h2>Administración de <b>Usuarios</b></h2>
+                        </div>
+                        <div class="col-sm-7">
+                            <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Agregar Usuario</span></a>					
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>						
+                            <th>Fecha Creación</th>
+                            <th>Roles</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="#"><img src="assets/images/avatar/1.jpg" class="avatar" alt="Avatar"> Pedro Perez</a></td>
+                            <td>04/10/2013</td>                        
+                            <td>Admin</td>
+                            <td><span class="status text-success">&bull;</span> Activo</td>
+                            <td>
+                                <a href="#" class="settings" data-bs-toggle="modal" data-bs-target="#editarModal"><i class="material-icons">&#xE8B8;</i></a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#confirmar"><i class="material-icons">&#xE5C9;</i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><a href="#"><img src="assets/images/avatar/2.jpg" class="avatar" alt="Avatar"> Paula Patelli</a></td>
+                            <td>05/08/2014</td>                       
+                            <td>Publisher</td>
+                            <td><span class="status text-success">&bull;</span> Activo</td>
+                            <td>
+                                <a href="#" class="settings" data-bs-toggle="modal" data-bs-target="#editarModal"><i class="material-icons">&#xE8B8;</i></a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#confirmar"><i class="material-icons">&#xE5C9;</i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><a href="#"><img src="assets/images/avatar/3.jpg" class="avatar" alt="Avatar"> Antonio Arenas</a></td>
+                            <td>11/05/2015</td>
+                            <td>Publisher</td>
+                            <td><span class="status text-danger">&bull;</span> Suspendido</td>                        
+                            <td>
+                                <a href="#" class="settings" data-bs-toggle="modal" data-bs-target="#editarModal"><i class="material-icons">&#xE8B8;</i></a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#confirmar"><i class="material-icons">&#xE5C9;</i></a>
+                            </td>                        
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><a href="#"><img src="assets/images/avatar/4.jpg" class="avatar" alt="Avatar"> Marcela Maldonado</a></td>
+                            <td>06/09/2016</td>
+                            <td>Reviewer</td>
+                            <td><span class="status text-success">&bull;</span> Activo</td>
+                            <td>
+                                <a href="#" class="settings" data-bs-toggle="modal" data-bs-target="#editarModal"><i class="material-icons">&#xE8B8;</i></a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#confirmar"><i class="material-icons">&#xE5C9;</i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><a href="#"><img src="assets/images/avatar/5.jpg" class="avatar" alt="Avatar"> Martin Mora</a></td>
+                            <td>12/08/2017</td>                        
+                            <td>Moderator</td>
+                            <td><span class="status text-warning">&bull;</span> Inactivo</td>
+                            <td>
+                                <a href="#" class="settings" data-bs-toggle="modal" data-bs-target="#editarModal"><i class="material-icons">&#xE8B8;</i></a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#confirmar"><i class="material-icons">&#xE5C9;</i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="clearfix">
+                    <div class="hint-text">13 Resultados</div>
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a href="#">Anterior</a></li>
+                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item active"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">Siguiente</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+
+  </div>
+
+    </div>
+    
+
+  </div>  
+  <!-- Pie de Pagina -->
+  <footer class="footer p-3" style=" background-color: #003072; color: rgba(255, 255, 255, 0.85);">
+    <div class="container-fluid clearfix">
+        <td id="pie" valign="top" align="center">
+          <div class="nover">
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td width="100" valign="top"></td>
+                  <td align="center" class="txlow" valign="top">
+                    Av. Fco.Salazar 01145 Temuco - Chile - Casilla 54-D -
+                    Teléfono:(56)45-2325000 - Fax:(56)45-2325950
+                    <br>
+                    Servicios y Soporte Técnico: <b>Dirección de Informática</b><br>Contacto:
+                    <a href="mailto:wdinfo@ufrontera.cl" class="link_min">wdinfo@ufrontera.cl</a> - Teléfono:(56)45-2325500
+                  </td>
+                  <td width="115" valign="top"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+    </div>
+  </footer>
+
+  <!-- Modales -->
+  <div class="modal  fade" id="detalleAsignatura" tabindex="-1" role="dialog" aria-labelledby="detalleAsignatura" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content ">
+          <div class="modal-header">
+              <h5 class="modal-title">Detalle Asignatura</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="alert alert-info" role="alert">
+              <h4 class="alert-heading">Ajustes Realizados</h4>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no seaest Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua, ugo consetetur Lorem Ipsum.
+            </div>
+            <div class="alert alert-secondary" role="alert">
+              <h4 class="alert-heading">Propuesta de Recuperación</h4>
+              Proin feugiat aliquam tortor, id hendrerit urna semper pulvinar. Nullam iaculis aliquam risus, nec tempus quam condimentum ut. Proin nibh nisl, imperdiet non dictum quis, sodales quis risus. Lorem Ipsum gravida rhoncus. 
+            </div>
+            <div class="alert alert-info" role="alert">
+              <h4 class="alert-heading">Estado</h4>
+              Proin sollicitudin mi eget felis congue sed adipiscing tellus vulputate. Cras suscipit aliquam sapien, non pretium turpis ullamcorper vitae. Aenean vitae libero velit, nec malesuada diam. Curabitur imperdiet porta sapien, sed luctus sapien sollicitudin at.
+            </div>
+            <div class="alert alert-secondary" role="alert">
+              <h4 class="alert-heading">Observaciones</h4>
+              Stet clita kasd gubergren, no seaest Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua, ugo consetetur Lorem Ipsum.
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    $('#exampleModal').on('show.bs.modal', event => {
+      var button = $(event.relatedTarget);
+      var modal = $(this);
+      // Use above variables to manipulate the DOM
+      
+    });
+  </script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="confirmar" tabindex="-1" role="dialog" aria-labelledby="confirmarMdola" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><b>¿Desea Eliminar el Usuario?</b></h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="editarModal" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Permisos</h5>
+      </div>
+      <div class="modal-body">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Ingresar Resolución</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Ingresar Modificacion Transitoria</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+          <label class="form-check-label" for="flexSwitchCheckChecked">Ingresa Actualización de Avances</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Visualizar Estados</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Genera Reportes</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" disabled>
+          <label class="form-check-label" for="flexSwitchCheckDisabled">Visar Modificacion</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+          <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Visar Actualización</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script src="assets/js/base.js"></script>    
+<script src="assets/js/datatables.min.js"></script>
+<script src="assets/js/planestudio.js"></script>
+</body>
+</html>
